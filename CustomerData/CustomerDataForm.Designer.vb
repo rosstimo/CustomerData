@@ -37,6 +37,7 @@ Partial Class CustomerDataForm
         Me.SubmitButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.SearchButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -72,6 +73,7 @@ Partial Class CustomerDataForm
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.SearchButton)
         Me.GroupBox2.Controls.Add(Me.SearchLabel)
         Me.GroupBox2.Controls.Add(Me.SearchTextBox)
         Me.GroupBox2.Controls.Add(Me.CategoryLabel)
@@ -94,7 +96,7 @@ Partial Class CustomerDataForm
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(127, 21)
+        Me.SearchTextBox.Location = New System.Drawing.Point(128, 18)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(263, 31)
         Me.SearchTextBox.TabIndex = 2
@@ -182,11 +184,21 @@ Partial Class CustomerDataForm
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'SearchButton
+        '
+        Me.SearchButton.Location = New System.Drawing.Point(405, 21)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(93, 31)
+        Me.SearchButton.TabIndex = 1
+        Me.SearchButton.Text = "&Search"
+        Me.SearchButton.UseVisualStyleBackColor = True
+        '
         'CustomerDataForm
         '
         Me.AcceptButton = Me.SubmitButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.ClearButton
         Me.ClientSize = New System.Drawing.Size(1010, 676)
         Me.Controls.Add(Me.ButtonGroupBox)
         Me.Controls.Add(Me.GroupBox3)
@@ -224,4 +236,5 @@ Partial Class CustomerDataForm
     Friend WithEvents SearchLabel As Label
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents CategoryLabel As Label
+    Friend WithEvents SearchButton As Button
 End Class
