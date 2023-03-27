@@ -22,38 +22,51 @@ Partial Class CustomerDataForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CustomerInfoGroupBox = New System.Windows.Forms.GroupBox()
         Me.NameTextBox = New System.Windows.Forms.TextBox()
         Me.NameLabel = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
+        Me.SearchButton = New System.Windows.Forms.Button()
         Me.SearchLabel = New System.Windows.Forms.Label()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.CategoryLabel = New System.Windows.Forms.Label()
         Me.CategoryComboBox = New System.Windows.Forms.ComboBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DisplayGroupBox = New System.Windows.Forms.GroupBox()
         Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.ButtonGroupBox = New System.Windows.Forms.GroupBox()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.SubmitButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SearchButton = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.CustomerInfoGroupBox.SuspendLayout()
+        Me.FilterGroupBox.SuspendLayout()
+        Me.DisplayGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox1
+        'CustomerInfoGroupBox
         '
-        Me.GroupBox1.Controls.Add(Me.NameTextBox)
-        Me.GroupBox1.Controls.Add(Me.NameLabel)
-        Me.GroupBox1.Location = New System.Drawing.Point(27, 35)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(362, 441)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Costomer Information"
+        Me.CustomerInfoGroupBox.Controls.Add(Me.TextBox3)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.Label3)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.TextBox2)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.Label2)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.TextBox1)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.Label1)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.NameTextBox)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.NameLabel)
+        Me.CustomerInfoGroupBox.Location = New System.Drawing.Point(27, 35)
+        Me.CustomerInfoGroupBox.Name = "CustomerInfoGroupBox"
+        Me.CustomerInfoGroupBox.Size = New System.Drawing.Size(362, 441)
+        Me.CustomerInfoGroupBox.TabIndex = 0
+        Me.CustomerInfoGroupBox.TabStop = False
+        Me.CustomerInfoGroupBox.Text = "Costomer Information"
         '
         'NameTextBox
         '
@@ -71,19 +84,28 @@ Partial Class CustomerDataForm
         Me.NameLabel.TabIndex = 0
         Me.NameLabel.Text = "Name"
         '
-        'GroupBox2
+        'FilterGroupBox
         '
-        Me.GroupBox2.Controls.Add(Me.SearchButton)
-        Me.GroupBox2.Controls.Add(Me.SearchLabel)
-        Me.GroupBox2.Controls.Add(Me.SearchTextBox)
-        Me.GroupBox2.Controls.Add(Me.CategoryLabel)
-        Me.GroupBox2.Controls.Add(Me.CategoryComboBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(395, 35)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(596, 111)
-        Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Filter"
+        Me.FilterGroupBox.Controls.Add(Me.SearchButton)
+        Me.FilterGroupBox.Controls.Add(Me.SearchLabel)
+        Me.FilterGroupBox.Controls.Add(Me.SearchTextBox)
+        Me.FilterGroupBox.Controls.Add(Me.CategoryLabel)
+        Me.FilterGroupBox.Controls.Add(Me.CategoryComboBox)
+        Me.FilterGroupBox.Location = New System.Drawing.Point(395, 35)
+        Me.FilterGroupBox.Name = "FilterGroupBox"
+        Me.FilterGroupBox.Size = New System.Drawing.Size(596, 111)
+        Me.FilterGroupBox.TabIndex = 1
+        Me.FilterGroupBox.TabStop = False
+        Me.FilterGroupBox.Text = "Filter"
+        '
+        'SearchButton
+        '
+        Me.SearchButton.Location = New System.Drawing.Point(397, 18)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(93, 31)
+        Me.SearchButton.TabIndex = 1
+        Me.SearchButton.Text = "&Search"
+        Me.SearchButton.UseVisualStyleBackColor = True
         '
         'SearchLabel
         '
@@ -118,14 +140,14 @@ Partial Class CustomerDataForm
         Me.CategoryComboBox.Size = New System.Drawing.Size(263, 33)
         Me.CategoryComboBox.TabIndex = 0
         '
-        'GroupBox3
+        'DisplayGroupBox
         '
-        Me.GroupBox3.Controls.Add(Me.DisplayListBox)
-        Me.GroupBox3.Location = New System.Drawing.Point(395, 152)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(596, 324)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
+        Me.DisplayGroupBox.Controls.Add(Me.DisplayListBox)
+        Me.DisplayGroupBox.Location = New System.Drawing.Point(395, 152)
+        Me.DisplayGroupBox.Name = "DisplayGroupBox"
+        Me.DisplayGroupBox.Size = New System.Drawing.Size(596, 324)
+        Me.DisplayGroupBox.TabIndex = 2
+        Me.DisplayGroupBox.TabStop = False
         '
         'DisplayListBox
         '
@@ -184,14 +206,53 @@ Partial Class CustomerDataForm
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'SearchButton
+        'TextBox1
         '
-        Me.SearchButton.Location = New System.Drawing.Point(405, 21)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(93, 31)
-        Me.SearchButton.TabIndex = 1
-        Me.SearchButton.Text = "&Search"
-        Me.SearchButton.UseVisualStyleBackColor = True
+        Me.TextBox1.Location = New System.Drawing.Point(84, 84)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(258, 31)
+        Me.TextBox1.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 84)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 25)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Name"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(84, 121)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(258, 31)
+        Me.TextBox2.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(15, 121)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 25)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Name"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(84, 158)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(258, 31)
+        Me.TextBox3.TabIndex = 7
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(15, 158)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 25)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Name"
         '
         'CustomerDataForm
         '
@@ -201,29 +262,29 @@ Partial Class CustomerDataForm
         Me.CancelButton = Me.ClearButton
         Me.ClientSize = New System.Drawing.Size(1010, 676)
         Me.Controls.Add(Me.ButtonGroupBox)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.DisplayGroupBox)
+        Me.Controls.Add(Me.FilterGroupBox)
+        Me.Controls.Add(Me.CustomerInfoGroupBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximumSize = New System.Drawing.Size(1920, 1080)
         Me.Name = "CustomerDataForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer Data"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
+        Me.CustomerInfoGroupBox.ResumeLayout(False)
+        Me.CustomerInfoGroupBox.PerformLayout()
+        Me.FilterGroupBox.ResumeLayout(False)
+        Me.FilterGroupBox.PerformLayout()
+        Me.DisplayGroupBox.ResumeLayout(False)
         Me.ButtonGroupBox.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents CustomerInfoGroupBox As GroupBox
+    Friend WithEvents FilterGroupBox As GroupBox
+    Friend WithEvents DisplayGroupBox As GroupBox
     Friend WithEvents DisplayListBox As ListBox
     Friend WithEvents ButtonGroupBox As GroupBox
     Friend WithEvents ClearButton As Button
@@ -237,4 +298,11 @@ Partial Class CustomerDataForm
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents CategoryLabel As Label
     Friend WithEvents SearchButton As Button
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents OpenFileDialog As OpenFileDialog
 End Class

@@ -1,6 +1,15 @@
 ﻿Option Strict On
 Option Explicit On
 
+'TODO
+'Add clean customer records to global array
+'display contents of array in listbox "LastName, FirstName"
+'populate textboxes with correct customer data when selected in the list box
+'
+'add filter choices and search, listbox should only display matches
+'
+'update records and save to data file
+
 Public Class CustomerDataForm
 
     Dim names(9) As String
@@ -41,6 +50,34 @@ Public Class CustomerDataForm
 
     End Sub
 
+    Private Sub LoadCustomerData()
+        Dim fileName As String = ""
+        Dim fileNumber As Integer = FreeFile()
+        Dim currentRecord As String
+        Dim tempData() As String
+        Try
+
+            FileOpen(fileNumber, fileName, OpenMode.Input)
+
+        Catch ex As Exception
+            MsgBox($"Sorry, {fileName} does not exist")
+            OpenFileDialog.ShowDialog()
+            fileName = OpenFileDialog.FileName
+        End Try
+
+        FileOpen(fileNumber, fileName, OpenMode.Input)
+        Do Until EOF(fileNumber)
+            Input(fileNumber, currentRecord)
+            If currentRecord <> "" And InStr(currentRecord, ",") > 0 Then
+                tempData = Split(currentRecord, ",")
+                DisplayListBox.Items.Add(currentRecord)
+                DisplayListBox.Items.Add(tempData(1))
+            End If
+        Loop
+        FileClose(fileNumber)
+    End Sub
+
+    '--------------------Event handlers --------------------
 
     Private Sub CustomerDataForm_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         Me.Text = $"W:{Me.Width}, H:{Me.Height}"
@@ -64,12 +101,13 @@ Public Class CustomerDataForm
         'DisplayListBox.Items.Add("Nancy")
         'DisplayListBox.Items.Add("Bill")
         'DisplayListBox.Items.Add("Sally")
-        Me.names(0) = "Jimmy"
-        Me.names(1) = "Frank"
-        Me.names(2) = "Nancy"
-        Me.names(3) = "Bill"
-        Me.names(4) = "Sally"
-        DisplayData()
+        'Me.names(0) = "Jimmy"
+        'Me.names(1) = "Frank"
+        'Me.names(2) = "Nancy"
+        'Me.names(3) = "Bill"
+        'Me.names(4) = "Sally"
+        'DisplayData()
+        LoadCustomerData()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
