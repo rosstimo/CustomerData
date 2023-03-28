@@ -23,14 +23,14 @@ Partial Class CustomerDataForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.CustomerInfoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.NameTextBox = New System.Windows.Forms.TextBox()
-        Me.NameLabel = New System.Windows.Forms.Label()
+        Me.EmailTextBox = New System.Windows.Forms.TextBox()
+        Me.EmailLabel = New System.Windows.Forms.Label()
+        Me.CityTextBox = New System.Windows.Forms.TextBox()
+        Me.CityLabel = New System.Windows.Forms.Label()
+        Me.LastNameTextBox = New System.Windows.Forms.TextBox()
+        Me.LastLabel = New System.Windows.Forms.Label()
+        Me.FirstNameTextBox = New System.Windows.Forms.TextBox()
+        Me.FirstNameLabel = New System.Windows.Forms.Label()
         Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.SearchLabel = New System.Windows.Forms.Label()
@@ -53,14 +53,14 @@ Partial Class CustomerDataForm
         '
         'CustomerInfoGroupBox
         '
-        Me.CustomerInfoGroupBox.Controls.Add(Me.TextBox3)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.Label3)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.TextBox2)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.Label2)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.TextBox1)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.Label1)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.NameTextBox)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.NameLabel)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.EmailTextBox)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.EmailLabel)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.CityTextBox)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.CityLabel)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.LastNameTextBox)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.LastLabel)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.FirstNameTextBox)
+        Me.CustomerInfoGroupBox.Controls.Add(Me.FirstNameLabel)
         Me.CustomerInfoGroupBox.Location = New System.Drawing.Point(27, 35)
         Me.CustomerInfoGroupBox.Name = "CustomerInfoGroupBox"
         Me.CustomerInfoGroupBox.Size = New System.Drawing.Size(362, 441)
@@ -68,69 +68,69 @@ Partial Class CustomerDataForm
         Me.CustomerInfoGroupBox.TabStop = False
         Me.CustomerInfoGroupBox.Text = "Costomer Information"
         '
-        'TextBox3
+        'EmailTextBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(84, 158)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(258, 31)
-        Me.TextBox3.TabIndex = 7
+        Me.EmailTextBox.Location = New System.Drawing.Point(84, 158)
+        Me.EmailTextBox.Name = "EmailTextBox"
+        Me.EmailTextBox.Size = New System.Drawing.Size(258, 31)
+        Me.EmailTextBox.TabIndex = 7
         '
-        'Label3
+        'EmailLabel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 158)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 25)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Name"
+        Me.EmailLabel.AutoSize = True
+        Me.EmailLabel.Location = New System.Drawing.Point(15, 158)
+        Me.EmailLabel.Name = "EmailLabel"
+        Me.EmailLabel.Size = New System.Drawing.Size(54, 25)
+        Me.EmailLabel.TabIndex = 6
+        Me.EmailLabel.Text = "Email"
         '
-        'TextBox2
+        'CityTextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(84, 121)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(258, 31)
-        Me.TextBox2.TabIndex = 5
+        Me.CityTextBox.Location = New System.Drawing.Point(84, 121)
+        Me.CityTextBox.Name = "CityTextBox"
+        Me.CityTextBox.Size = New System.Drawing.Size(258, 31)
+        Me.CityTextBox.TabIndex = 5
         '
-        'Label2
+        'CityLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 121)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 25)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Name"
+        Me.CityLabel.AutoSize = True
+        Me.CityLabel.Location = New System.Drawing.Point(15, 121)
+        Me.CityLabel.Name = "CityLabel"
+        Me.CityLabel.Size = New System.Drawing.Size(42, 25)
+        Me.CityLabel.TabIndex = 4
+        Me.CityLabel.Text = "City"
         '
-        'TextBox1
+        'LastNameTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(84, 84)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(258, 31)
-        Me.TextBox1.TabIndex = 3
+        Me.LastNameTextBox.Location = New System.Drawing.Point(84, 84)
+        Me.LastNameTextBox.Name = "LastNameTextBox"
+        Me.LastNameTextBox.Size = New System.Drawing.Size(258, 31)
+        Me.LastNameTextBox.TabIndex = 3
         '
-        'Label1
+        'LastLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 84)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 25)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Name"
+        Me.LastLabel.AutoSize = True
+        Me.LastLabel.Location = New System.Drawing.Point(15, 84)
+        Me.LastLabel.Name = "LastLabel"
+        Me.LastLabel.Size = New System.Drawing.Size(43, 25)
+        Me.LastLabel.TabIndex = 2
+        Me.LastLabel.Text = "Last"
         '
-        'NameTextBox
+        'FirstNameTextBox
         '
-        Me.NameTextBox.Location = New System.Drawing.Point(84, 47)
-        Me.NameTextBox.Name = "NameTextBox"
-        Me.NameTextBox.Size = New System.Drawing.Size(258, 31)
-        Me.NameTextBox.TabIndex = 1
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(84, 47)
+        Me.FirstNameTextBox.Name = "FirstNameTextBox"
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(258, 31)
+        Me.FirstNameTextBox.TabIndex = 1
         '
-        'NameLabel
+        'FirstNameLabel
         '
-        Me.NameLabel.AutoSize = True
-        Me.NameLabel.Location = New System.Drawing.Point(15, 47)
-        Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(59, 25)
-        Me.NameLabel.TabIndex = 0
-        Me.NameLabel.Text = "Name"
+        Me.FirstNameLabel.AutoSize = True
+        Me.FirstNameLabel.Location = New System.Drawing.Point(15, 47)
+        Me.FirstNameLabel.Name = "FirstNameLabel"
+        Me.FirstNameLabel.Size = New System.Drawing.Size(45, 25)
+        Me.FirstNameLabel.TabIndex = 0
+        Me.FirstNameLabel.Text = "First"
         '
         'FilterGroupBox
         '
@@ -292,17 +292,17 @@ Partial Class CustomerDataForm
     Friend WithEvents ExitButton As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CategoryComboBox As ComboBox
-    Friend WithEvents NameTextBox As TextBox
-    Friend WithEvents NameLabel As Label
+    Friend WithEvents FirstNameTextBox As TextBox
+    Friend WithEvents FirstNameLabel As Label
     Friend WithEvents SearchLabel As Label
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents CategoryLabel As Label
     Friend WithEvents SearchButton As Button
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents EmailTextBox As TextBox
+    Friend WithEvents EmailLabel As Label
+    Friend WithEvents CityTextBox As TextBox
+    Friend WithEvents CityLabel As Label
+    Friend WithEvents LastNameTextBox As TextBox
+    Friend WithEvents LastLabel As Label
     Friend WithEvents OpenFileDialog As OpenFileDialog
 End Class

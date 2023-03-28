@@ -18,8 +18,8 @@ Public Class CustomerDataForm
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         'ShowTestData()
-        If NameTextBox.Text <> "" Then
-            DisplayListBox.Items.Add(NameTextBox.Text)
+        If FirstNameTextBox.Text <> "" Then
+            DisplayListBox.Items.Add(FirstNameTextBox.Text)
         Else
             MsgBox("Name is required")
         End If
@@ -27,7 +27,7 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub DefaultSetup()
-        NameTextBox.Text = ""
+        FirstNameTextBox.Text = ""
     End Sub
 
     Private Sub DisplayData()
@@ -106,7 +106,7 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub DisplayListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DisplayListBox.SelectedIndexChanged
-        NameTextBox.Text = DisplayListBox.SelectedItem.ToString
+        FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString
     End Sub
 
     Private Sub CustomerDataForm_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -129,5 +129,13 @@ Public Class CustomerDataForm
         If DisplayListBox.Items.Contains(SearchTextBox.Text) Then
             DisplayListBox.SelectedItem = SearchTextBox.Text
         End If
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox.TextChanged
+
+    End Sub
+
+    Private Sub LastLabel_Click(sender As Object, e As EventArgs) Handles LastLabel.Click
+
     End Sub
 End Class
