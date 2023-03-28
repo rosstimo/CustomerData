@@ -13,6 +13,8 @@ Option Explicit On
 Public Class CustomerDataForm
 
     Dim names(9) As String
+    Dim customerData(3, 500) As String
+
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         'ShowTestData()
         If NameTextBox.Text <> "" Then
@@ -55,26 +57,40 @@ Public Class CustomerDataForm
         Dim fileNumber As Integer = FreeFile()
         Dim currentRecord As String
         Dim tempData() As String
+        Dim currentRow As Integer
         Try
 
             FileOpen(fileNumber, fileName, OpenMode.Input)
 
         Catch ex As Exception
-            MsgBox($"Sorry, {fileName} does not exist")
+            'MsgBox($"Sorry, {fileName} does not exist")
             OpenFileDialog.ShowDialog()
             fileName = OpenFileDialog.FileName
         End Try
 
         FileOpen(fileNumber, fileName, OpenMode.Input)
+        currentRow = 0
         Do Until EOF(fileNumber)
-            Input(fileNumber, currentRecord)
-            If currentRecord <> "" And InStr(currentRecord, ",") > 0 Then
-                tempData = Split(currentRecord, ",")
-                DisplayListBox.Items.Add(currentRecord)
-                DisplayListBox.Items.Add(tempData(1))
-            End If
+            'Input(fileNumber, currentRecord)
+            currentRecord = LineInput(fileNumber)
+            'If currentRecord <> "" And InStr(currentRecord, ",") > 0 Then
+            tempData = Split(currentRecord, ",")
+
+            Me.customerData(0, currentRow) = tempData(0)
+            Me.customerData(1, currentRow) = tempData(1)
+            Me.customerData(2, currentRow) = tempData(2)
+            Me.customerData(3, currentRow) = tempData(3)
+
+            'DisplayListBox.Items.Add(currentRecord)
+            'DisplayListBox.Items.Add(tempData(1))
+            'End If
+            currentRow += 1
         Loop
         FileClose(fileNumber)
+    End Sub
+
+    Private Sub DisplayCustomerData()
+
     End Sub
 
     '--------------------Event handlers --------------------
