@@ -106,7 +106,12 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub DisplayListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DisplayListBox.SelectedIndexChanged
-        FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString
+        'FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString
+        Me.Text = DisplayListBox.SelectedIndex.ToString
+        FirstNameTextBox.Text = Me.customerData(0, DisplayListBox.SelectedIndex)
+        LastNameTextBox.Text = Me.customerData(1, DisplayListBox.SelectedIndex)
+        CityTextBox.Text = Me.customerData(2, DisplayListBox.SelectedIndex)
+        EmailTextBox.Text = Me.customerData(3, DisplayListBox.SelectedIndex)
     End Sub
 
     Private Sub CustomerDataForm_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -126,16 +131,17 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
-        If DisplayListBox.Items.Contains(SearchTextBox.Text) Then
-            DisplayListBox.SelectedItem = SearchTextBox.Text
-        End If
+        DisplayListBox.Items.Clear()
+
+
+        For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
+            For column = Me.customerData.GetLowerBound(0) To Me.customerData.GetUpperBound(0)
+                If InStr(Me.customerData(column, row), SearchTextBox.Text) > 0 Then
+                    DisplayListBox.Items.Add($"{Me.customerData(1, row)},{Me.customerData(0, row)}")
+                End If
+            Next
+        Next
+
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox.TextChanged
-
-    End Sub
-
-    Private Sub LastLabel_Click(sender As Object, e As EventArgs) Handles LastLabel.Click
-
-    End Sub
 End Class
