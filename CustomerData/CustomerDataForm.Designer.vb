@@ -45,14 +45,21 @@ Partial Class CustomerDataForm
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.SelectGroupBox = New System.Windows.Forms.GroupBox()
+        Me.AllRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FirstNameRadioButton = New System.Windows.Forms.RadioButton()
+        Me.CityRadioButton = New System.Windows.Forms.RadioButton()
+        Me.LastNameRadioButton = New System.Windows.Forms.RadioButton()
         Me.CustomerInfoGroupBox.SuspendLayout()
         Me.FilterGroupBox.SuspendLayout()
         Me.DisplayGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
+        Me.SelectGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'CustomerInfoGroupBox
         '
+        Me.CustomerInfoGroupBox.Controls.Add(Me.SelectGroupBox)
         Me.CustomerInfoGroupBox.Controls.Add(Me.EmailTextBox)
         Me.CustomerInfoGroupBox.Controls.Add(Me.EmailLabel)
         Me.CustomerInfoGroupBox.Controls.Add(Me.CityTextBox)
@@ -254,6 +261,62 @@ Partial Class CustomerDataForm
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'SelectGroupBox
+        '
+        Me.SelectGroupBox.Controls.Add(Me.CityRadioButton)
+        Me.SelectGroupBox.Controls.Add(Me.LastNameRadioButton)
+        Me.SelectGroupBox.Controls.Add(Me.FirstNameRadioButton)
+        Me.SelectGroupBox.Controls.Add(Me.AllRadioButton)
+        Me.SelectGroupBox.Location = New System.Drawing.Point(15, 212)
+        Me.SelectGroupBox.Name = "SelectGroupBox"
+        Me.SelectGroupBox.Size = New System.Drawing.Size(327, 203)
+        Me.SelectGroupBox.TabIndex = 8
+        Me.SelectGroupBox.TabStop = False
+        '
+        'AllRadioButton
+        '
+        Me.AllRadioButton.AutoSize = True
+        Me.AllRadioButton.Location = New System.Drawing.Point(25, 41)
+        Me.AllRadioButton.Name = "AllRadioButton"
+        Me.AllRadioButton.Size = New System.Drawing.Size(57, 29)
+        Me.AllRadioButton.TabIndex = 0
+        Me.AllRadioButton.TabStop = True
+        Me.AllRadioButton.Text = "All"
+        Me.AllRadioButton.UseVisualStyleBackColor = True
+        '
+        'FirstNameRadioButton
+        '
+        Me.FirstNameRadioButton.AutoSize = True
+        Me.FirstNameRadioButton.Location = New System.Drawing.Point(25, 76)
+        Me.FirstNameRadioButton.Name = "FirstNameRadioButton"
+        Me.FirstNameRadioButton.Size = New System.Drawing.Size(122, 29)
+        Me.FirstNameRadioButton.TabIndex = 1
+        Me.FirstNameRadioButton.TabStop = True
+        Me.FirstNameRadioButton.Text = "First Name"
+        Me.FirstNameRadioButton.UseVisualStyleBackColor = True
+        '
+        'CityRadioButton
+        '
+        Me.CityRadioButton.AutoSize = True
+        Me.CityRadioButton.Location = New System.Drawing.Point(25, 146)
+        Me.CityRadioButton.Name = "CityRadioButton"
+        Me.CityRadioButton.Size = New System.Drawing.Size(67, 29)
+        Me.CityRadioButton.TabIndex = 3
+        Me.CityRadioButton.TabStop = True
+        Me.CityRadioButton.Text = "City"
+        Me.CityRadioButton.UseVisualStyleBackColor = True
+        '
+        'LastNameRadioButton
+        '
+        Me.LastNameRadioButton.AutoSize = True
+        Me.LastNameRadioButton.Location = New System.Drawing.Point(25, 111)
+        Me.LastNameRadioButton.Name = "LastNameRadioButton"
+        Me.LastNameRadioButton.Size = New System.Drawing.Size(120, 29)
+        Me.LastNameRadioButton.TabIndex = 2
+        Me.LastNameRadioButton.TabStop = True
+        Me.LastNameRadioButton.Text = "Last Name"
+        Me.LastNameRadioButton.UseVisualStyleBackColor = True
+        '
         'CustomerDataForm
         '
         Me.AcceptButton = Me.SubmitButton
@@ -277,6 +340,8 @@ Partial Class CustomerDataForm
         Me.FilterGroupBox.PerformLayout()
         Me.DisplayGroupBox.ResumeLayout(False)
         Me.ButtonGroupBox.ResumeLayout(False)
+        Me.SelectGroupBox.ResumeLayout(False)
+        Me.SelectGroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -305,4 +370,9 @@ Partial Class CustomerDataForm
     Friend WithEvents LastNameTextBox As TextBox
     Friend WithEvents LastLabel As Label
     Friend WithEvents OpenFileDialog As OpenFileDialog
+    Friend WithEvents SelectGroupBox As GroupBox
+    Friend WithEvents CityRadioButton As RadioButton
+    Friend WithEvents LastNameRadioButton As RadioButton
+    Friend WithEvents FirstNameRadioButton As RadioButton
+    Friend WithEvents AllRadioButton As RadioButton
 End Class

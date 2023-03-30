@@ -28,6 +28,7 @@ Public Class CustomerDataForm
 
     Private Sub DefaultSetup()
         FirstNameTextBox.Text = ""
+        AllRadioButton.Checked = True
     End Sub
 
     Private Sub DisplayData()
@@ -126,22 +127,60 @@ Public Class CustomerDataForm
         'Me.names(3) = "Bill"
         'Me.names(4) = "Sally"
         'DisplayData()
+        DefaultSetup()
         LoadCustomerData()
         DisplayCustomerData()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
-        DisplayListBox.Items.Clear()
+        Dim currentRow As String
 
+        DisplayListBox.Items.Clear()
 
         For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
             For column = Me.customerData.GetLowerBound(0) To Me.customerData.GetUpperBound(0)
                 If InStr(Me.customerData(column, row), SearchTextBox.Text) > 0 Then
-                    DisplayListBox.Items.Add($"{Me.customerData(1, row)},{Me.customerData(0, row)}")
+                    currentRow = $"{Me.customerData(1, row)},{Me.customerData(0, row)}"
+                    If Not (DisplayListBox.Items.Contains(currentRow)) Then
+                        DisplayListBox.Items.Add(currentRow)
+                    End If
                 End If
             Next
         Next
 
     End Sub
 
+    Private Sub CategoryComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategoryComboBox.SelectedIndexChanged
+        Me.Text = CategoryComboBox.SelectedIndex.ToString
+    End Sub
+
+    Private Sub RadioButtons_CheckedChanged(sender As Object, e As EventArgs) Handles AllRadioButton.CheckedChanged,
+                                                                                        FirstNameRadioButton.CheckedChanged,
+                                                                                        LastNameRadioButton.CheckedChanged,
+                                                                                       CityRadioButton.CheckedChanged
+        Dim column As Integer
+
+        CategoryComboBox.Items.Clear()
+
+        Try
+            Select Case True
+                Case FirstNameRadioButton.Checked
+                    column = 0
+                Case LastNameRadioButton.Checked
+                    column = 1
+                Case CityRadioButton.Checked
+                    column = 2
+                Case Else
+                    CategoryComboBox.Items.Clear()
+            End Select
+            For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
+                CategoryComboBox.Items.Add(Me.customerData(column, row))
+            Next
+            CategoryComboBox.Sorted = True
+        Catch ex As Exception
+            'TODO
+        End Try
+
+
+    End Sub
 End Class
