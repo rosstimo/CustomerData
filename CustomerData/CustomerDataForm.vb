@@ -80,6 +80,7 @@ Public Class CustomerDataForm
             currentRow += 1
         Loop
         FileClose(fileNumber)
+        ReDim Preserve Me.customerData(3, currentRow - 1)
     End Sub
 
     Private Sub DisplayCustomerData()
@@ -159,8 +160,8 @@ Public Class CustomerDataForm
                                                                                         LastNameRadioButton.CheckedChanged,
                                                                                        CityRadioButton.CheckedChanged
         Dim column As Integer
-
         CategoryComboBox.Items.Clear()
+
 
         Try
             Select Case True
@@ -173,12 +174,18 @@ Public Class CustomerDataForm
                 Case Else
                     CategoryComboBox.Items.Clear()
             End Select
+            'don't add empty records or duplicates
             For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
-                CategoryComboBox.Items.Add(Me.customerData(column, row))
+                If Me.customerData(column, row) <> "" And CategoryComboBox.Items.Contains(Me.customerData(column, row)) = False Then
+                    CategoryComboBox.Items.Add(Me.customerData(column, row))
+                End If
             Next
             CategoryComboBox.Sorted = True
+            CategoryComboBox.SelectedText = ""
         Catch ex As Exception
             'TODO
+            ' MsgBox($"row:{row}, column:{column}")
+            'MsgBox(ex.Message & vbNewLine & ex.StackTrace)
         End Try
 
 
