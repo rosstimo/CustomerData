@@ -152,16 +152,14 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub CategoryComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategoryComboBox.SelectedIndexChanged
-        Me.Text = CategoryComboBox.SelectedIndex.ToString
+        'TODO
+        'select city then treat selection as a search term
     End Sub
 
     Private Sub RadioButtons_CheckedChanged(sender As Object, e As EventArgs) Handles AllRadioButton.CheckedChanged,
-                                                                                        FirstNameRadioButton.CheckedChanged,
-                                                                                        LastNameRadioButton.CheckedChanged,
                                                                                        CityRadioButton.CheckedChanged
         Dim column As Integer
         CategoryComboBox.Items.Clear()
-
 
         Try
             Select Case True
