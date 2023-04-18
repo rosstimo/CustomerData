@@ -8,6 +8,8 @@ Imports System.Drawing.Design
 'populate textboxes with correct customer data when selected in the list box
 '
 'add filter choices and search, listbox should only display matches
+'add filtered data array, display it, index alignment with this array and list box
+'to ensure properly populated text box fields when selecting items in the list box
 '
 'update records and save to data file
 
@@ -132,6 +134,7 @@ Public Class CustomerDataForm
         DefaultSetup()
         'LoadCustomerData()
         'DisplayCustomerData()
+        CurrentFileStatusLabel.Text = Me.currentFile
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
@@ -193,6 +196,7 @@ Public Class CustomerDataForm
     Private Sub OpenTopMenuItem_Click(sender As Object, e As EventArgs) Handles OpenTopMenuItem.Click
         OpenFileDialog.ShowDialog()
         Me.currentFile = OpenFileDialog.FileName
+        CurrentFileStatusLabel.Text = Me.currentFile
         LoadCustomerData()
         DisplayCustomerData()
     End Sub

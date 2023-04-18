@@ -49,17 +49,20 @@ Partial Class CustomerDataForm
         SubmitButton = New Button()
         ExitButton = New Button()
         MenuStrip1 = New MenuStrip()
-        OpenFileDialog = New OpenFileDialog()
         FileTopMenuItem = New ToolStripMenuItem()
         OpenTopMenuItem = New ToolStripMenuItem()
         SaveTopMenuItem = New ToolStripMenuItem()
         ExitTopMenuItem = New ToolStripMenuItem()
+        OpenFileDialog = New OpenFileDialog()
+        StatusStrip = New StatusStrip()
+        CurrentFileStatusLabel = New ToolStripStatusLabel()
         CustomerInfoGroupBox.SuspendLayout()
         SelectGroupBox.SuspendLayout()
         FilterGroupBox.SuspendLayout()
         DisplayGroupBox.SuspendLayout()
         ButtonGroupBox.SuspendLayout()
         MenuStrip1.SuspendLayout()
+        StatusStrip.SuspendLayout()
         SuspendLayout()
         ' 
         ' CustomerInfoGroupBox
@@ -351,7 +354,7 @@ Partial Class CustomerDataForm
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Padding = New Padding(4, 1, 0, 1)
-        MenuStrip1.Size = New Size(707, 24)
+        MenuStrip1.Size = New Size(709, 24)
         MenuStrip1.TabIndex = 4
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -365,20 +368,35 @@ Partial Class CustomerDataForm
         ' OpenTopMenuItem
         ' 
         OpenTopMenuItem.Name = "OpenTopMenuItem"
-        OpenTopMenuItem.Size = New Size(180, 22)
+        OpenTopMenuItem.Size = New Size(103, 22)
         OpenTopMenuItem.Text = "&Open"
         ' 
         ' SaveTopMenuItem
         ' 
         SaveTopMenuItem.Name = "SaveTopMenuItem"
-        SaveTopMenuItem.Size = New Size(180, 22)
+        SaveTopMenuItem.Size = New Size(103, 22)
         SaveTopMenuItem.Text = "&Save"
         ' 
         ' ExitTopMenuItem
         ' 
         ExitTopMenuItem.Name = "ExitTopMenuItem"
-        ExitTopMenuItem.Size = New Size(180, 22)
+        ExitTopMenuItem.Size = New Size(103, 22)
         ExitTopMenuItem.Text = "E&xit"
+        ' 
+        ' StatusStrip
+        ' 
+        StatusStrip.Items.AddRange(New ToolStripItem() {CurrentFileStatusLabel})
+        StatusStrip.Location = New Point(0, 392)
+        StatusStrip.Name = "StatusStrip"
+        StatusStrip.Size = New Size(709, 22)
+        StatusStrip.TabIndex = 5
+        StatusStrip.Text = "StatusStrip1"
+        ' 
+        ' CurrentFileStatusLabel
+        ' 
+        CurrentFileStatusLabel.Name = "CurrentFileStatusLabel"
+        CurrentFileStatusLabel.Size = New Size(119, 17)
+        CurrentFileStatusLabel.Text = "ToolStripStatusLabel1"
         ' 
         ' CustomerDataForm
         ' 
@@ -386,7 +404,8 @@ Partial Class CustomerDataForm
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         CancelButton = ClearButton
-        ClientSize = New Size(707, 406)
+        ClientSize = New Size(709, 414)
+        Controls.Add(StatusStrip)
         Controls.Add(ButtonGroupBox)
         Controls.Add(DisplayGroupBox)
         Controls.Add(FilterGroupBox)
@@ -408,6 +427,8 @@ Partial Class CustomerDataForm
         ButtonGroupBox.ResumeLayout(False)
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        StatusStrip.ResumeLayout(False)
+        StatusStrip.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -444,4 +465,6 @@ Partial Class CustomerDataForm
     Friend WithEvents OpenTopMenuItem As ToolStripMenuItem
     Friend WithEvents SaveTopMenuItem As ToolStripMenuItem
     Friend WithEvents ExitTopMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusStrip As StatusStrip
+    Friend WithEvents CurrentFileStatusLabel As ToolStripStatusLabel
 End Class
