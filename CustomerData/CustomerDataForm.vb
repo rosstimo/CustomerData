@@ -15,6 +15,7 @@ Public Class CustomerDataForm
 
     Dim names(9) As String
     Dim customerData(3, 210) As String
+    Dim currentFile As String
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
         'ShowTestData()
@@ -55,7 +56,7 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub LoadCustomerData()
-        Dim fileName As String = ""
+        Dim fileName As String = Me.currentFile
         Dim fileNumber As Integer = FreeFile()
         Dim currentRecord As String
         Dim tempData() As String
@@ -63,24 +64,24 @@ Public Class CustomerDataForm
 
         Try
             FileOpen(fileNumber, fileName, OpenMode.Input)
-        Catch ex As Exception
-            OpenFileDialog.ShowDialog()
-            fileName = OpenFileDialog.FileName
-        End Try
 
-        FileOpen(fileNumber, fileName, OpenMode.Input)
-        currentRow = 0
-        Do Until EOF(fileNumber)
-            currentRecord = LineInput(fileNumber)
-            tempData = Split(currentRecord, ",")
-            Me.customerData(0, currentRow) = Strings.Right(tempData(0), Len(tempData(0)) - 3)
-            Me.customerData(1, currentRow) = tempData(1)
-            Me.customerData(2, currentRow) = tempData(2)
-            Me.customerData(3, currentRow) = tempData(3)
-            currentRow += 1
-        Loop
-        FileClose(fileNumber)
-        ReDim Preserve Me.customerData(3, currentRow - 1)
+            ' FileOpen(fileNumber, fileName, OpenMode.Input)
+            currentRow = 0
+            Do Until EOF(fileNumber)
+                currentRecord = LineInput(fileNumber)
+                tempData = Split(currentRecord, ",")
+                Me.customerData(0, currentRow) = Strings.Right(tempData(0), Len(tempData(0)) - 3)
+                Me.customerData(1, currentRow) = tempData(1)
+                Me.customerData(2, currentRow) = tempData(2)
+                Me.customerData(3, currentRow) = tempData(3)
+                currentRow += 1
+            Loop
+            FileClose(fileNumber)
+            ReDim Preserve Me.customerData(3, currentRow - 1)
+        Catch ex As Exception
+            'OpenFileDialog.ShowDialog()
+            'fileName = OpenFileDialog.FileName
+        End Try
     End Sub
 
     Private Sub DisplayCustomerData()
@@ -95,7 +96,7 @@ Public Class CustomerDataForm
 
     '--------------------Event handlers --------------------
 
-    Private Sub CustomerDataForm_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+    Private Sub CustomerDataForm_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
         Me.Text = $"W:{Me.Width}, H:{Me.Height}"
     End Sub
 
@@ -116,7 +117,7 @@ Public Class CustomerDataForm
         EmailTextBox.Text = Me.customerData(3, DisplayListBox.SelectedIndex)
     End Sub
 
-    Private Sub CustomerDataForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub CustomerDataForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'DisplayListBox.Items.Add("Jimmy")
         'DisplayListBox.Items.Add("Frank")
         'DisplayListBox.Items.Add("Nancy")
@@ -129,8 +130,8 @@ Public Class CustomerDataForm
         'Me.names(4) = "Sally"
         'DisplayData()
         DefaultSetup()
-        LoadCustomerData()
-        DisplayCustomerData()
+        'LoadCustomerData()
+        'DisplayCustomerData()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
@@ -187,5 +188,12 @@ Public Class CustomerDataForm
         End Try
 
 
+    End Sub
+
+    Private Sub OpenTopMenuItem_Click(sender As Object, e As EventArgs) Handles OpenTopMenuItem.Click
+        OpenFileDialog.ShowDialog()
+        Me.currentFile = OpenFileDialog.FileName
+        LoadCustomerData()
+        DisplayCustomerData()
     End Sub
 End Class

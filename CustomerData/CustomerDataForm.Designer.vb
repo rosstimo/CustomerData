@@ -22,329 +22,394 @@ Partial Class CustomerDataForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.CustomerInfoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.EmailTextBox = New System.Windows.Forms.TextBox()
-        Me.EmailLabel = New System.Windows.Forms.Label()
-        Me.CityTextBox = New System.Windows.Forms.TextBox()
-        Me.CityLabel = New System.Windows.Forms.Label()
-        Me.LastNameTextBox = New System.Windows.Forms.TextBox()
-        Me.LastLabel = New System.Windows.Forms.Label()
-        Me.FirstNameTextBox = New System.Windows.Forms.TextBox()
-        Me.FirstNameLabel = New System.Windows.Forms.Label()
-        Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
-        Me.SearchButton = New System.Windows.Forms.Button()
-        Me.SearchLabel = New System.Windows.Forms.Label()
-        Me.SearchTextBox = New System.Windows.Forms.TextBox()
-        Me.CategoryLabel = New System.Windows.Forms.Label()
-        Me.CategoryComboBox = New System.Windows.Forms.ComboBox()
-        Me.DisplayGroupBox = New System.Windows.Forms.GroupBox()
-        Me.DisplayListBox = New System.Windows.Forms.ListBox()
-        Me.ButtonGroupBox = New System.Windows.Forms.GroupBox()
-        Me.ClearButton = New System.Windows.Forms.Button()
-        Me.SubmitButton = New System.Windows.Forms.Button()
-        Me.ExitButton = New System.Windows.Forms.Button()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.SelectGroupBox = New System.Windows.Forms.GroupBox()
-        Me.AllRadioButton = New System.Windows.Forms.RadioButton()
-        Me.FirstNameRadioButton = New System.Windows.Forms.RadioButton()
-        Me.CityRadioButton = New System.Windows.Forms.RadioButton()
-        Me.LastNameRadioButton = New System.Windows.Forms.RadioButton()
-        Me.CustomerInfoGroupBox.SuspendLayout()
-        Me.FilterGroupBox.SuspendLayout()
-        Me.DisplayGroupBox.SuspendLayout()
-        Me.ButtonGroupBox.SuspendLayout()
-        Me.SelectGroupBox.SuspendLayout()
-        Me.SuspendLayout()
-        '
-        'CustomerInfoGroupBox
-        '
-        Me.CustomerInfoGroupBox.Controls.Add(Me.SelectGroupBox)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.EmailTextBox)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.EmailLabel)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.CityTextBox)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.CityLabel)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.LastNameTextBox)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.LastLabel)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.FirstNameTextBox)
-        Me.CustomerInfoGroupBox.Controls.Add(Me.FirstNameLabel)
-        Me.CustomerInfoGroupBox.Location = New System.Drawing.Point(27, 35)
-        Me.CustomerInfoGroupBox.Name = "CustomerInfoGroupBox"
-        Me.CustomerInfoGroupBox.Size = New System.Drawing.Size(362, 441)
-        Me.CustomerInfoGroupBox.TabIndex = 0
-        Me.CustomerInfoGroupBox.TabStop = False
-        Me.CustomerInfoGroupBox.Text = "Costomer Information"
-        '
-        'EmailTextBox
-        '
-        Me.EmailTextBox.Location = New System.Drawing.Point(84, 158)
-        Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(258, 31)
-        Me.EmailTextBox.TabIndex = 7
-        '
-        'EmailLabel
-        '
-        Me.EmailLabel.AutoSize = True
-        Me.EmailLabel.Location = New System.Drawing.Point(15, 158)
-        Me.EmailLabel.Name = "EmailLabel"
-        Me.EmailLabel.Size = New System.Drawing.Size(54, 25)
-        Me.EmailLabel.TabIndex = 6
-        Me.EmailLabel.Text = "Email"
-        '
-        'CityTextBox
-        '
-        Me.CityTextBox.Location = New System.Drawing.Point(84, 121)
-        Me.CityTextBox.Name = "CityTextBox"
-        Me.CityTextBox.Size = New System.Drawing.Size(258, 31)
-        Me.CityTextBox.TabIndex = 5
-        '
-        'CityLabel
-        '
-        Me.CityLabel.AutoSize = True
-        Me.CityLabel.Location = New System.Drawing.Point(15, 121)
-        Me.CityLabel.Name = "CityLabel"
-        Me.CityLabel.Size = New System.Drawing.Size(42, 25)
-        Me.CityLabel.TabIndex = 4
-        Me.CityLabel.Text = "City"
-        '
-        'LastNameTextBox
-        '
-        Me.LastNameTextBox.Location = New System.Drawing.Point(84, 84)
-        Me.LastNameTextBox.Name = "LastNameTextBox"
-        Me.LastNameTextBox.Size = New System.Drawing.Size(258, 31)
-        Me.LastNameTextBox.TabIndex = 3
-        '
-        'LastLabel
-        '
-        Me.LastLabel.AutoSize = True
-        Me.LastLabel.Location = New System.Drawing.Point(15, 84)
-        Me.LastLabel.Name = "LastLabel"
-        Me.LastLabel.Size = New System.Drawing.Size(43, 25)
-        Me.LastLabel.TabIndex = 2
-        Me.LastLabel.Text = "Last"
-        '
-        'FirstNameTextBox
-        '
-        Me.FirstNameTextBox.Location = New System.Drawing.Point(84, 47)
-        Me.FirstNameTextBox.Name = "FirstNameTextBox"
-        Me.FirstNameTextBox.Size = New System.Drawing.Size(258, 31)
-        Me.FirstNameTextBox.TabIndex = 1
-        '
-        'FirstNameLabel
-        '
-        Me.FirstNameLabel.AutoSize = True
-        Me.FirstNameLabel.Location = New System.Drawing.Point(15, 47)
-        Me.FirstNameLabel.Name = "FirstNameLabel"
-        Me.FirstNameLabel.Size = New System.Drawing.Size(45, 25)
-        Me.FirstNameLabel.TabIndex = 0
-        Me.FirstNameLabel.Text = "First"
-        '
-        'FilterGroupBox
-        '
-        Me.FilterGroupBox.Controls.Add(Me.SearchButton)
-        Me.FilterGroupBox.Controls.Add(Me.SearchLabel)
-        Me.FilterGroupBox.Controls.Add(Me.SearchTextBox)
-        Me.FilterGroupBox.Controls.Add(Me.CategoryLabel)
-        Me.FilterGroupBox.Controls.Add(Me.CategoryComboBox)
-        Me.FilterGroupBox.Location = New System.Drawing.Point(395, 35)
-        Me.FilterGroupBox.Name = "FilterGroupBox"
-        Me.FilterGroupBox.Size = New System.Drawing.Size(596, 111)
-        Me.FilterGroupBox.TabIndex = 1
-        Me.FilterGroupBox.TabStop = False
-        Me.FilterGroupBox.Text = "Filter"
-        '
-        'SearchButton
-        '
-        Me.SearchButton.Location = New System.Drawing.Point(397, 18)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(93, 31)
-        Me.SearchButton.TabIndex = 1
-        Me.SearchButton.Text = "&Search"
-        Me.SearchButton.UseVisualStyleBackColor = True
-        '
-        'SearchLabel
-        '
-        Me.SearchLabel.AutoSize = True
-        Me.SearchLabel.Location = New System.Drawing.Point(58, 24)
-        Me.SearchLabel.Name = "SearchLabel"
-        Me.SearchLabel.Size = New System.Drawing.Size(64, 25)
-        Me.SearchLabel.TabIndex = 3
-        Me.SearchLabel.Text = "Search"
-        '
-        'SearchTextBox
-        '
-        Me.SearchTextBox.Location = New System.Drawing.Point(128, 18)
-        Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(263, 31)
-        Me.SearchTextBox.TabIndex = 2
-        '
-        'CategoryLabel
-        '
-        Me.CategoryLabel.AutoSize = True
-        Me.CategoryLabel.Location = New System.Drawing.Point(37, 70)
-        Me.CategoryLabel.Name = "CategoryLabel"
-        Me.CategoryLabel.Size = New System.Drawing.Size(84, 25)
-        Me.CategoryLabel.TabIndex = 1
-        Me.CategoryLabel.Text = "Category"
-        '
-        'CategoryComboBox
-        '
-        Me.CategoryComboBox.FormattingEnabled = True
-        Me.CategoryComboBox.Location = New System.Drawing.Point(127, 70)
-        Me.CategoryComboBox.Name = "CategoryComboBox"
-        Me.CategoryComboBox.Size = New System.Drawing.Size(263, 33)
-        Me.CategoryComboBox.TabIndex = 0
-        '
-        'DisplayGroupBox
-        '
-        Me.DisplayGroupBox.Controls.Add(Me.DisplayListBox)
-        Me.DisplayGroupBox.Location = New System.Drawing.Point(395, 152)
-        Me.DisplayGroupBox.Name = "DisplayGroupBox"
-        Me.DisplayGroupBox.Size = New System.Drawing.Size(596, 324)
-        Me.DisplayGroupBox.TabIndex = 2
-        Me.DisplayGroupBox.TabStop = False
-        '
-        'DisplayListBox
-        '
-        Me.DisplayListBox.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.DisplayListBox.FormattingEnabled = True
-        Me.DisplayListBox.ItemHeight = 22
-        Me.DisplayListBox.Location = New System.Drawing.Point(6, 30)
-        Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(582, 268)
-        Me.DisplayListBox.TabIndex = 0
-        '
-        'ButtonGroupBox
-        '
-        Me.ButtonGroupBox.Controls.Add(Me.ClearButton)
-        Me.ButtonGroupBox.Controls.Add(Me.SubmitButton)
-        Me.ButtonGroupBox.Controls.Add(Me.ExitButton)
-        Me.ButtonGroupBox.Location = New System.Drawing.Point(27, 482)
-        Me.ButtonGroupBox.Name = "ButtonGroupBox"
-        Me.ButtonGroupBox.Size = New System.Drawing.Size(964, 164)
-        Me.ButtonGroupBox.TabIndex = 3
-        Me.ButtonGroupBox.TabStop = False
-        '
-        'ClearButton
-        '
-        Me.ClearButton.Location = New System.Drawing.Point(162, 30)
-        Me.ClearButton.Name = "ClearButton"
-        Me.ClearButton.Size = New System.Drawing.Size(150, 114)
-        Me.ClearButton.TabIndex = 2
-        Me.ClearButton.Text = "&Clear"
-        Me.ClearButton.UseVisualStyleBackColor = True
-        '
-        'SubmitButton
-        '
-        Me.SubmitButton.Location = New System.Drawing.Point(6, 30)
-        Me.SubmitButton.Name = "SubmitButton"
-        Me.SubmitButton.Size = New System.Drawing.Size(150, 114)
-        Me.SubmitButton.TabIndex = 1
-        Me.SubmitButton.Text = "&Submit"
-        Me.SubmitButton.UseVisualStyleBackColor = True
-        '
-        'ExitButton
-        '
-        Me.ExitButton.Location = New System.Drawing.Point(318, 30)
-        Me.ExitButton.Name = "ExitButton"
-        Me.ExitButton.Size = New System.Drawing.Size(150, 114)
-        Me.ExitButton.TabIndex = 0
-        Me.ExitButton.Text = "E&xit"
-        Me.ExitButton.UseVisualStyleBackColor = True
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1010, 24)
-        Me.MenuStrip1.TabIndex = 4
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'SelectGroupBox
-        '
-        Me.SelectGroupBox.Controls.Add(Me.CityRadioButton)
-        Me.SelectGroupBox.Controls.Add(Me.LastNameRadioButton)
-        Me.SelectGroupBox.Controls.Add(Me.FirstNameRadioButton)
-        Me.SelectGroupBox.Controls.Add(Me.AllRadioButton)
-        Me.SelectGroupBox.Location = New System.Drawing.Point(15, 212)
-        Me.SelectGroupBox.Name = "SelectGroupBox"
-        Me.SelectGroupBox.Size = New System.Drawing.Size(327, 203)
-        Me.SelectGroupBox.TabIndex = 8
-        Me.SelectGroupBox.TabStop = False
-        '
-        'AllRadioButton
-        '
-        Me.AllRadioButton.AutoSize = True
-        Me.AllRadioButton.Location = New System.Drawing.Point(25, 41)
-        Me.AllRadioButton.Name = "AllRadioButton"
-        Me.AllRadioButton.Size = New System.Drawing.Size(57, 29)
-        Me.AllRadioButton.TabIndex = 0
-        Me.AllRadioButton.TabStop = True
-        Me.AllRadioButton.Text = "All"
-        Me.AllRadioButton.UseVisualStyleBackColor = True
-        '
-        'FirstNameRadioButton
-        '
-        Me.FirstNameRadioButton.AutoSize = True
-        Me.FirstNameRadioButton.Location = New System.Drawing.Point(25, 76)
-        Me.FirstNameRadioButton.Name = "FirstNameRadioButton"
-        Me.FirstNameRadioButton.Size = New System.Drawing.Size(122, 29)
-        Me.FirstNameRadioButton.TabIndex = 1
-        Me.FirstNameRadioButton.TabStop = True
-        Me.FirstNameRadioButton.Text = "First Name"
-        Me.FirstNameRadioButton.UseVisualStyleBackColor = True
-        '
-        'CityRadioButton
-        '
-        Me.CityRadioButton.AutoSize = True
-        Me.CityRadioButton.Location = New System.Drawing.Point(25, 146)
-        Me.CityRadioButton.Name = "CityRadioButton"
-        Me.CityRadioButton.Size = New System.Drawing.Size(67, 29)
-        Me.CityRadioButton.TabIndex = 3
-        Me.CityRadioButton.TabStop = True
-        Me.CityRadioButton.Text = "City"
-        Me.CityRadioButton.UseVisualStyleBackColor = True
-        '
-        'LastNameRadioButton
-        '
-        Me.LastNameRadioButton.AutoSize = True
-        Me.LastNameRadioButton.Location = New System.Drawing.Point(25, 111)
-        Me.LastNameRadioButton.Name = "LastNameRadioButton"
-        Me.LastNameRadioButton.Size = New System.Drawing.Size(120, 29)
-        Me.LastNameRadioButton.TabIndex = 2
-        Me.LastNameRadioButton.TabStop = True
-        Me.LastNameRadioButton.Text = "Last Name"
-        Me.LastNameRadioButton.UseVisualStyleBackColor = True
-        '
-        'CustomerDataForm
-        '
-        Me.AcceptButton = Me.SubmitButton
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.ClearButton
-        Me.ClientSize = New System.Drawing.Size(1010, 676)
-        Me.Controls.Add(Me.ButtonGroupBox)
-        Me.Controls.Add(Me.DisplayGroupBox)
-        Me.Controls.Add(Me.FilterGroupBox)
-        Me.Controls.Add(Me.CustomerInfoGroupBox)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.MaximumSize = New System.Drawing.Size(1920, 1080)
-        Me.Name = "CustomerDataForm"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Customer Data"
-        Me.CustomerInfoGroupBox.ResumeLayout(False)
-        Me.CustomerInfoGroupBox.PerformLayout()
-        Me.FilterGroupBox.ResumeLayout(False)
-        Me.FilterGroupBox.PerformLayout()
-        Me.DisplayGroupBox.ResumeLayout(False)
-        Me.ButtonGroupBox.ResumeLayout(False)
-        Me.SelectGroupBox.ResumeLayout(False)
-        Me.SelectGroupBox.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        CustomerInfoGroupBox = New GroupBox()
+        SelectGroupBox = New GroupBox()
+        CityRadioButton = New RadioButton()
+        LastNameRadioButton = New RadioButton()
+        FirstNameRadioButton = New RadioButton()
+        AllRadioButton = New RadioButton()
+        EmailTextBox = New TextBox()
+        EmailLabel = New Label()
+        CityTextBox = New TextBox()
+        CityLabel = New Label()
+        LastNameTextBox = New TextBox()
+        LastLabel = New Label()
+        FirstNameTextBox = New TextBox()
+        FirstNameLabel = New Label()
+        FilterGroupBox = New GroupBox()
+        SearchButton = New Button()
+        SearchLabel = New Label()
+        SearchTextBox = New TextBox()
+        CategoryLabel = New Label()
+        CategoryComboBox = New ComboBox()
+        DisplayGroupBox = New GroupBox()
+        DisplayListBox = New ListBox()
+        ButtonGroupBox = New GroupBox()
+        ClearButton = New Button()
+        SubmitButton = New Button()
+        ExitButton = New Button()
+        MenuStrip1 = New MenuStrip()
+        OpenFileDialog = New OpenFileDialog()
+        FileTopMenuItem = New ToolStripMenuItem()
+        OpenTopMenuItem = New ToolStripMenuItem()
+        SaveTopMenuItem = New ToolStripMenuItem()
+        ExitTopMenuItem = New ToolStripMenuItem()
+        CustomerInfoGroupBox.SuspendLayout()
+        SelectGroupBox.SuspendLayout()
+        FilterGroupBox.SuspendLayout()
+        DisplayGroupBox.SuspendLayout()
+        ButtonGroupBox.SuspendLayout()
+        MenuStrip1.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' CustomerInfoGroupBox
+        ' 
+        CustomerInfoGroupBox.Controls.Add(SelectGroupBox)
+        CustomerInfoGroupBox.Controls.Add(EmailTextBox)
+        CustomerInfoGroupBox.Controls.Add(EmailLabel)
+        CustomerInfoGroupBox.Controls.Add(CityTextBox)
+        CustomerInfoGroupBox.Controls.Add(CityLabel)
+        CustomerInfoGroupBox.Controls.Add(LastNameTextBox)
+        CustomerInfoGroupBox.Controls.Add(LastLabel)
+        CustomerInfoGroupBox.Controls.Add(FirstNameTextBox)
+        CustomerInfoGroupBox.Controls.Add(FirstNameLabel)
+        CustomerInfoGroupBox.Location = New Point(19, 26)
+        CustomerInfoGroupBox.Margin = New Padding(2)
+        CustomerInfoGroupBox.Name = "CustomerInfoGroupBox"
+        CustomerInfoGroupBox.Padding = New Padding(2)
+        CustomerInfoGroupBox.Size = New Size(253, 265)
+        CustomerInfoGroupBox.TabIndex = 0
+        CustomerInfoGroupBox.TabStop = False
+        CustomerInfoGroupBox.Text = "Costomer Information"
+        ' 
+        ' SelectGroupBox
+        ' 
+        SelectGroupBox.Controls.Add(CityRadioButton)
+        SelectGroupBox.Controls.Add(LastNameRadioButton)
+        SelectGroupBox.Controls.Add(FirstNameRadioButton)
+        SelectGroupBox.Controls.Add(AllRadioButton)
+        SelectGroupBox.Location = New Point(10, 127)
+        SelectGroupBox.Margin = New Padding(2)
+        SelectGroupBox.Name = "SelectGroupBox"
+        SelectGroupBox.Padding = New Padding(2)
+        SelectGroupBox.Size = New Size(229, 122)
+        SelectGroupBox.TabIndex = 8
+        SelectGroupBox.TabStop = False
+        ' 
+        ' CityRadioButton
+        ' 
+        CityRadioButton.AutoSize = True
+        CityRadioButton.Location = New Point(18, 88)
+        CityRadioButton.Margin = New Padding(2)
+        CityRadioButton.Name = "CityRadioButton"
+        CityRadioButton.Size = New Size(46, 19)
+        CityRadioButton.TabIndex = 3
+        CityRadioButton.TabStop = True
+        CityRadioButton.Text = "City"
+        CityRadioButton.UseVisualStyleBackColor = True
+        ' 
+        ' LastNameRadioButton
+        ' 
+        LastNameRadioButton.AutoSize = True
+        LastNameRadioButton.Location = New Point(18, 67)
+        LastNameRadioButton.Margin = New Padding(2)
+        LastNameRadioButton.Name = "LastNameRadioButton"
+        LastNameRadioButton.Size = New Size(81, 19)
+        LastNameRadioButton.TabIndex = 2
+        LastNameRadioButton.TabStop = True
+        LastNameRadioButton.Text = "Last Name"
+        LastNameRadioButton.UseVisualStyleBackColor = True
+        ' 
+        ' FirstNameRadioButton
+        ' 
+        FirstNameRadioButton.AutoSize = True
+        FirstNameRadioButton.Location = New Point(18, 46)
+        FirstNameRadioButton.Margin = New Padding(2)
+        FirstNameRadioButton.Name = "FirstNameRadioButton"
+        FirstNameRadioButton.Size = New Size(82, 19)
+        FirstNameRadioButton.TabIndex = 1
+        FirstNameRadioButton.TabStop = True
+        FirstNameRadioButton.Text = "First Name"
+        FirstNameRadioButton.UseVisualStyleBackColor = True
+        ' 
+        ' AllRadioButton
+        ' 
+        AllRadioButton.AutoSize = True
+        AllRadioButton.Location = New Point(18, 25)
+        AllRadioButton.Margin = New Padding(2)
+        AllRadioButton.Name = "AllRadioButton"
+        AllRadioButton.Size = New Size(39, 19)
+        AllRadioButton.TabIndex = 0
+        AllRadioButton.TabStop = True
+        AllRadioButton.Text = "All"
+        AllRadioButton.UseVisualStyleBackColor = True
+        ' 
+        ' EmailTextBox
+        ' 
+        EmailTextBox.Location = New Point(59, 95)
+        EmailTextBox.Margin = New Padding(2)
+        EmailTextBox.Name = "EmailTextBox"
+        EmailTextBox.Size = New Size(182, 23)
+        EmailTextBox.TabIndex = 7
+        ' 
+        ' EmailLabel
+        ' 
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New Point(10, 95)
+        EmailLabel.Margin = New Padding(2, 0, 2, 0)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New Size(36, 15)
+        EmailLabel.TabIndex = 6
+        EmailLabel.Text = "Email"
+        ' 
+        ' CityTextBox
+        ' 
+        CityTextBox.Location = New Point(59, 73)
+        CityTextBox.Margin = New Padding(2)
+        CityTextBox.Name = "CityTextBox"
+        CityTextBox.Size = New Size(182, 23)
+        CityTextBox.TabIndex = 5
+        ' 
+        ' CityLabel
+        ' 
+        CityLabel.AutoSize = True
+        CityLabel.Location = New Point(10, 73)
+        CityLabel.Margin = New Padding(2, 0, 2, 0)
+        CityLabel.Name = "CityLabel"
+        CityLabel.Size = New Size(28, 15)
+        CityLabel.TabIndex = 4
+        CityLabel.Text = "City"
+        ' 
+        ' LastNameTextBox
+        ' 
+        LastNameTextBox.Location = New Point(59, 50)
+        LastNameTextBox.Margin = New Padding(2)
+        LastNameTextBox.Name = "LastNameTextBox"
+        LastNameTextBox.Size = New Size(182, 23)
+        LastNameTextBox.TabIndex = 3
+        ' 
+        ' LastLabel
+        ' 
+        LastLabel.AutoSize = True
+        LastLabel.Location = New Point(10, 50)
+        LastLabel.Margin = New Padding(2, 0, 2, 0)
+        LastLabel.Name = "LastLabel"
+        LastLabel.Size = New Size(28, 15)
+        LastLabel.TabIndex = 2
+        LastLabel.Text = "Last"
+        ' 
+        ' FirstNameTextBox
+        ' 
+        FirstNameTextBox.Location = New Point(59, 28)
+        FirstNameTextBox.Margin = New Padding(2)
+        FirstNameTextBox.Name = "FirstNameTextBox"
+        FirstNameTextBox.Size = New Size(182, 23)
+        FirstNameTextBox.TabIndex = 1
+        ' 
+        ' FirstNameLabel
+        ' 
+        FirstNameLabel.AutoSize = True
+        FirstNameLabel.Location = New Point(10, 28)
+        FirstNameLabel.Margin = New Padding(2, 0, 2, 0)
+        FirstNameLabel.Name = "FirstNameLabel"
+        FirstNameLabel.Size = New Size(29, 15)
+        FirstNameLabel.TabIndex = 0
+        FirstNameLabel.Text = "First"
+        ' 
+        ' FilterGroupBox
+        ' 
+        FilterGroupBox.Controls.Add(SearchButton)
+        FilterGroupBox.Controls.Add(SearchLabel)
+        FilterGroupBox.Controls.Add(SearchTextBox)
+        FilterGroupBox.Controls.Add(CategoryLabel)
+        FilterGroupBox.Controls.Add(CategoryComboBox)
+        FilterGroupBox.Location = New Point(276, 26)
+        FilterGroupBox.Margin = New Padding(2)
+        FilterGroupBox.Name = "FilterGroupBox"
+        FilterGroupBox.Padding = New Padding(2)
+        FilterGroupBox.Size = New Size(417, 67)
+        FilterGroupBox.TabIndex = 1
+        FilterGroupBox.TabStop = False
+        FilterGroupBox.Text = "Filter"
+        ' 
+        ' SearchButton
+        ' 
+        SearchButton.Location = New Point(278, 11)
+        SearchButton.Margin = New Padding(2)
+        SearchButton.Name = "SearchButton"
+        SearchButton.Size = New Size(70, 23)
+        SearchButton.TabIndex = 1
+        SearchButton.Text = "&Search"
+        SearchButton.UseVisualStyleBackColor = True
+        ' 
+        ' SearchLabel
+        ' 
+        SearchLabel.AutoSize = True
+        SearchLabel.Location = New Point(41, 14)
+        SearchLabel.Margin = New Padding(2, 0, 2, 0)
+        SearchLabel.Name = "SearchLabel"
+        SearchLabel.Size = New Size(42, 15)
+        SearchLabel.TabIndex = 3
+        SearchLabel.Text = "Search"
+        ' 
+        ' SearchTextBox
+        ' 
+        SearchTextBox.Location = New Point(90, 11)
+        SearchTextBox.Margin = New Padding(2)
+        SearchTextBox.Name = "SearchTextBox"
+        SearchTextBox.Size = New Size(185, 23)
+        SearchTextBox.TabIndex = 2
+        ' 
+        ' CategoryLabel
+        ' 
+        CategoryLabel.AutoSize = True
+        CategoryLabel.Location = New Point(26, 42)
+        CategoryLabel.Margin = New Padding(2, 0, 2, 0)
+        CategoryLabel.Name = "CategoryLabel"
+        CategoryLabel.Size = New Size(55, 15)
+        CategoryLabel.TabIndex = 1
+        CategoryLabel.Text = "Category"
+        ' 
+        ' CategoryComboBox
+        ' 
+        CategoryComboBox.FormattingEnabled = True
+        CategoryComboBox.Location = New Point(89, 42)
+        CategoryComboBox.Margin = New Padding(2)
+        CategoryComboBox.Name = "CategoryComboBox"
+        CategoryComboBox.Size = New Size(185, 23)
+        CategoryComboBox.TabIndex = 0
+        ' 
+        ' DisplayGroupBox
+        ' 
+        DisplayGroupBox.Controls.Add(DisplayListBox)
+        DisplayGroupBox.Location = New Point(273, 97)
+        DisplayGroupBox.Margin = New Padding(2)
+        DisplayGroupBox.Name = "DisplayGroupBox"
+        DisplayGroupBox.Padding = New Padding(2)
+        DisplayGroupBox.Size = New Size(417, 194)
+        DisplayGroupBox.TabIndex = 2
+        DisplayGroupBox.TabStop = False
+        ' 
+        ' DisplayListBox
+        ' 
+        DisplayListBox.Font = New Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DisplayListBox.FormattingEnabled = True
+        DisplayListBox.ItemHeight = 14
+        DisplayListBox.Location = New Point(4, 18)
+        DisplayListBox.Margin = New Padding(2)
+        DisplayListBox.Name = "DisplayListBox"
+        DisplayListBox.Size = New Size(409, 158)
+        DisplayListBox.TabIndex = 0
+        ' 
+        ' ButtonGroupBox
+        ' 
+        ButtonGroupBox.Controls.Add(ClearButton)
+        ButtonGroupBox.Controls.Add(SubmitButton)
+        ButtonGroupBox.Controls.Add(ExitButton)
+        ButtonGroupBox.Location = New Point(19, 289)
+        ButtonGroupBox.Margin = New Padding(2)
+        ButtonGroupBox.Name = "ButtonGroupBox"
+        ButtonGroupBox.Padding = New Padding(2)
+        ButtonGroupBox.Size = New Size(675, 98)
+        ButtonGroupBox.TabIndex = 3
+        ButtonGroupBox.TabStop = False
+        ' 
+        ' ClearButton
+        ' 
+        ClearButton.Location = New Point(113, 18)
+        ClearButton.Margin = New Padding(2)
+        ClearButton.Name = "ClearButton"
+        ClearButton.Size = New Size(105, 68)
+        ClearButton.TabIndex = 2
+        ClearButton.Text = "&Clear"
+        ClearButton.UseVisualStyleBackColor = True
+        ' 
+        ' SubmitButton
+        ' 
+        SubmitButton.Location = New Point(4, 18)
+        SubmitButton.Margin = New Padding(2)
+        SubmitButton.Name = "SubmitButton"
+        SubmitButton.Size = New Size(105, 68)
+        SubmitButton.TabIndex = 1
+        SubmitButton.Text = "&Submit"
+        SubmitButton.UseVisualStyleBackColor = True
+        ' 
+        ' ExitButton
+        ' 
+        ExitButton.Location = New Point(223, 18)
+        ExitButton.Margin = New Padding(2)
+        ExitButton.Name = "ExitButton"
+        ExitButton.Size = New Size(105, 68)
+        ExitButton.TabIndex = 0
+        ExitButton.Text = "E&xit"
+        ExitButton.UseVisualStyleBackColor = True
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.ImageScalingSize = New Size(24, 24)
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileTopMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Padding = New Padding(4, 1, 0, 1)
+        MenuStrip1.Size = New Size(707, 24)
+        MenuStrip1.TabIndex = 4
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
+        ' FileTopMenuItem
+        ' 
+        FileTopMenuItem.DropDownItems.AddRange(New ToolStripItem() {OpenTopMenuItem, SaveTopMenuItem, ExitTopMenuItem})
+        FileTopMenuItem.Name = "FileTopMenuItem"
+        FileTopMenuItem.Size = New Size(37, 22)
+        FileTopMenuItem.Text = "&File"
+        ' 
+        ' OpenTopMenuItem
+        ' 
+        OpenTopMenuItem.Name = "OpenTopMenuItem"
+        OpenTopMenuItem.Size = New Size(180, 22)
+        OpenTopMenuItem.Text = "&Open"
+        ' 
+        ' SaveTopMenuItem
+        ' 
+        SaveTopMenuItem.Name = "SaveTopMenuItem"
+        SaveTopMenuItem.Size = New Size(180, 22)
+        SaveTopMenuItem.Text = "&Save"
+        ' 
+        ' ExitTopMenuItem
+        ' 
+        ExitTopMenuItem.Name = "ExitTopMenuItem"
+        ExitTopMenuItem.Size = New Size(180, 22)
+        ExitTopMenuItem.Text = "E&xit"
+        ' 
+        ' CustomerDataForm
+        ' 
+        AcceptButton = SubmitButton
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        CancelButton = ClearButton
+        ClientSize = New Size(707, 406)
+        Controls.Add(ButtonGroupBox)
+        Controls.Add(DisplayGroupBox)
+        Controls.Add(FilterGroupBox)
+        Controls.Add(CustomerInfoGroupBox)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
+        Margin = New Padding(2)
+        MaximumSize = New Size(1349, 664)
+        Name = "CustomerDataForm"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Customer Data"
+        CustomerInfoGroupBox.ResumeLayout(False)
+        CustomerInfoGroupBox.PerformLayout()
+        SelectGroupBox.ResumeLayout(False)
+        SelectGroupBox.PerformLayout()
+        FilterGroupBox.ResumeLayout(False)
+        FilterGroupBox.PerformLayout()
+        DisplayGroupBox.ResumeLayout(False)
+        ButtonGroupBox.ResumeLayout(False)
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents CustomerInfoGroupBox As GroupBox
@@ -375,4 +440,8 @@ Partial Class CustomerDataForm
     Friend WithEvents LastNameRadioButton As RadioButton
     Friend WithEvents FirstNameRadioButton As RadioButton
     Friend WithEvents AllRadioButton As RadioButton
+    Friend WithEvents FileTopMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenTopMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveTopMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitTopMenuItem As ToolStripMenuItem
 End Class
