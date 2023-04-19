@@ -132,9 +132,10 @@ Public Class CustomerDataForm
         'Me.names(4) = "Sally"
         'DisplayData()
         DefaultSetup()
-        'LoadCustomerData()
-        'DisplayCustomerData()
-        CurrentFileStatusLabel.Text = Me.currentFile
+        Me.currentFile = "../../../Resources/UserData.txt"
+        CurrentFileStatusLabel.Text = "UserData.txt"
+        LoadCustomerData()
+        DisplayCustomerData()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
