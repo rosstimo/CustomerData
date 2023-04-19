@@ -17,6 +17,7 @@ Public Class CustomerDataForm
 
     Dim names(9) As String
     Dim customerData(3, 210) As String
+    Dim filteredData(3, 210) As String
     Dim currentFile As String
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
@@ -86,12 +87,27 @@ Public Class CustomerDataForm
         End Try
     End Sub
 
+    Private Sub LoadFilteredData()
+        ReDim Me.filteredData(3, 210)
+        For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
+            If InStr(customerData(0, row), SearchTextBox.Text) > 0 Then
+
+                Me.filteredData(0, row) = Me.customerData(0, row)
+                Me.filteredData(1, row) = Me.customerData(1, row)
+                Me.filteredData(2, row) = Me.customerData(2, row)
+                Me.filteredData(3, row) = Me.customerData(3, row)
+            End If
+
+        Next
+        DisplayCustomerData()
+    End Sub
+
     Private Sub DisplayCustomerData()
         Dim currentRow As String
 
 
-        For row = LBound(Me.customerData) To Me.customerData.GetUpperBound(1) ' UBound(Me.customerData)
-            currentRow = $"{Me.customerData(1, row)}, {Me.customerData(0, row)}"
+        For row = LBound(Me.filteredData) To Me.filteredData.GetUpperBound(1) ' UBound(Me.customerData)
+            currentRow = $"{Me.filteredData(1, row)}, {Me.filteredData(0, row)}"
             DisplayListBox.Items.Add(currentRow)
         Next
     End Sub
@@ -113,10 +129,10 @@ Public Class CustomerDataForm
     Private Sub DisplayListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DisplayListBox.SelectedIndexChanged
         'FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString
         Me.Text = DisplayListBox.SelectedIndex.ToString
-        FirstNameTextBox.Text = Me.customerData(0, DisplayListBox.SelectedIndex)
-        LastNameTextBox.Text = Me.customerData(1, DisplayListBox.SelectedIndex)
-        CityTextBox.Text = Me.customerData(2, DisplayListBox.SelectedIndex)
-        EmailTextBox.Text = Me.customerData(3, DisplayListBox.SelectedIndex)
+        FirstNameTextBox.Text = Me.filteredData(0, DisplayListBox.SelectedIndex)
+        LastNameTextBox.Text = Me.filteredData(1, DisplayListBox.SelectedIndex)
+        CityTextBox.Text = Me.filteredData(2, DisplayListBox.SelectedIndex)
+        EmailTextBox.Text = Me.filteredData(3, DisplayListBox.SelectedIndex)
     End Sub
 
     Private Sub CustomerDataForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -135,6 +151,7 @@ Public Class CustomerDataForm
         Me.currentFile = "../../../Resources/UserData.txt"
         CurrentFileStatusLabel.Text = "UserData.txt"
         LoadCustomerData()
+        LoadFilteredData()
         DisplayCustomerData()
     End Sub
 
