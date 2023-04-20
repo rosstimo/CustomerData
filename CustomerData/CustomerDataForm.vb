@@ -5,12 +5,14 @@ Imports System.Drawing.Design
 'TODO
 '**Add clean customer records to global array
 '**display contents of array in listbox "LastName, FirstName"
-'populate textboxes with correct customer data when selected in the list box
+'**populate textboxes with correct customer data when selected in the list box
+'**add filtered data array, display it, index alignment with this array and list box
+'**to ensure properly populated text box fields when selecting items in the list box
 '
-'add filter choices and search, listbox should only display matches
-'add filtered data array, display it, index alignment with this array and list box
-'to ensure properly populated text box fields when selecting items in the list box
-'
+'add filter choices populate combobox with unique sorted choices.
+'for example city would have all available cities listed in the combo box.
+'selecting a city would populate the listbox with all records matching the selected city.
+
 'update records and save to data file
 
 Public Class CustomerDataForm
