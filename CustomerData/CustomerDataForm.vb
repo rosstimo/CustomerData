@@ -88,23 +88,40 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub LoadFilteredData()
+        Dim filterIndex As Integer
+        Dim matchfound As Boolean
+
+        'clear all the previous data from the filtered data array
         ReDim Me.filteredData(3, 210)
-        For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
-            If InStr(customerData(0, row), SearchTextBox.Text) > 0 Then
-
-                Me.filteredData(0, row) = Me.customerData(0, row)
-                Me.filteredData(1, row) = Me.customerData(1, row)
-                Me.filteredData(2, row) = Me.customerData(2, row)
-                Me.filteredData(3, row) = Me.customerData(3, row)
+        'search all rows of primary data array
+        For dataIndex = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
+            matchfound = False
+            'search each data field except email for search term
+            For field = 0 To 2
+                If InStr(customerData(field, dataIndex), SearchTextBox.Text, CompareMethod.Text) > 0 Then
+                    matchfound = True
+                End If
+            Next
+            'If match is found add the record to the filtered data array
+            'and increment the array index
+            If matchfound Then
+                Me.filteredData(0, filterIndex) = Me.customerData(0, dataIndex)
+                Me.filteredData(1, filterIndex) = Me.customerData(1, dataIndex)
+                Me.filteredData(2, filterIndex) = Me.customerData(2, dataIndex)
+                Me.filteredData(3, filterIndex) = Me.customerData(3, dataIndex)
+                filterIndex += 1
             End If
-
         Next
+        'trim all the empty indexes off the end of filtered data array
+        ReDim Preserve Me.filteredData(3, filterIndex - 1)
+        'should data display be called here?
         DisplayCustomerData()
     End Sub
 
     Private Sub DisplayCustomerData()
         Dim currentRow As String
 
+        DisplayListBox.Items.Clear()
 
         For row = LBound(Me.filteredData) To Me.filteredData.GetUpperBound(1) ' UBound(Me.customerData)
             currentRow = $"{Me.filteredData(1, row)}, {Me.filteredData(0, row)}"
@@ -156,21 +173,21 @@ Public Class CustomerDataForm
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
-        Dim currentRow As String
+        'Dim currentRow As String
 
-        DisplayListBox.Items.Clear()
+        'DisplayListBox.Items.Clear()
 
-        For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
-            For column = Me.customerData.GetLowerBound(0) To Me.customerData.GetUpperBound(0)
-                If InStr(Me.customerData(column, row), SearchTextBox.Text) > 0 Then
-                    currentRow = $"{Me.customerData(1, row)},{Me.customerData(0, row)}"
-                    If Not (DisplayListBox.Items.Contains(currentRow)) Then
-                        DisplayListBox.Items.Add(currentRow)
-                    End If
-                End If
-            Next
-        Next
-
+        'For row = Me.customerData.GetLowerBound(1) To Me.customerData.GetUpperBound(1)
+        '    For column = Me.customerData.GetLowerBound(0) To Me.customerData.GetUpperBound(0)
+        '        If InStr(Me.customerData(column, row), SearchTextBox.Text) > 0 Then
+        '            currentRow = $"{Me.customerData(1, row)},{Me.customerData(0, row)}"
+        '            If Not (DisplayListBox.Items.Contains(currentRow)) Then
+        '                DisplayListBox.Items.Add(currentRow)
+        '            End If
+        '        End If
+        '    Next
+        'Next
+        LoadFilteredData()
     End Sub
 
     Private Sub CategoryComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategoryComboBox.SelectedIndexChanged
